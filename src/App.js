@@ -1,12 +1,15 @@
 import React from 'react';
 
 function App() {
+  // Get data
   const {words} = require('./data/id.json')
   const dataWords = words.map(el => el.targetWord)
 
+  // Keyword and suggestions
   const [keyword, setKeyword] = React.useState('')
   const sugestionWords = dataWords.filter(el => el.toLowerCase().includes(keyword))
 
+  // Result
   const [result, setResult] = React.useState([])
   const [showResult, setShowResult] = React.useState(false)
   const handleSearch = () => {
